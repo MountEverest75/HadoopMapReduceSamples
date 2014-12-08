@@ -7,8 +7,10 @@ import os
 import csv
 import sys
 def mapper():
+	"""Setup reader and writer objects for Standard Input and Output with Tab delimiter"""
 	reader = csv.reader(sys.stdin, delimiter='\t')
 	writer = csv.writer(sys.stdout, delimiter='\t', quotechar='"', quoting=csv.QUOTE_ALL)
+	"""Skip Header"""
 	reader.next()
 	for line in reader:
 		if len(line) == 19: 
